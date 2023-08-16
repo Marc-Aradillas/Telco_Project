@@ -1,269 +1,111 @@
 Telco Project
 =============================
-
+<!--Created Anchor links to navigate read me better-->
 
 - [Project Description](#project-description)
 - [Project Goal](#project-goal)
 - [Initial Thoughts](#Initial-Thoughts)
 - [Plan](#Plan)
-	- [List CheckBox](#list-checkbox)
+	- [List](#list)
 - [Link](#link)
 	- [Anchor links](#anchor-links)
-- [Blockquote](#blockquote)
-- [Image | GIF](#image--gif)
-- [Style Text](#style-text)
-	- [Italic](#italic)
-	- [Bold](#bold)
-	- [Strikethrough](#strikethrough)
-- [Code](#code)
-- [Email](#email)
-- [Table](#table)
-	- [Table Align](#table-align)
-    	- [Align Center](#align-center)
-    	- [Align Left](#align-left)
-    	- [Align Right](#align-right)
-- [Escape Characters](#escape-characters)
-- [Emoji](#emoji)
-- [Shields Badges](#Shields-Badges)
-- [Markdown Editor](#markdown-editor)
-- [Some links for more in depth learning](#some-links-for-more-in-depth-learning)
+- [Data Dictionary](#data-dictionary))
+- [Steps to Reproduce](#steps-to-reporduce)
+- [Conclusions](#conclusions)
+	- Takeaway and Key Findings_(#takeaway-and-key-findings)
+- [Reccomendations](#recommendations)
+- [Next Steps](#next-steps)
+
 
 ----------------------------------
 
 # Project-Description
 
+Telco is a telecommunications company that offers many services to a wide range of customers. I have decided to look into the different elements of a customer churning to determine if any of them increase or decrease the chance of a customer to churn.
 
-# Titles 
+### Project Goal
 
-### Title 1
-### Title 2
+* Discover drivers of churn of Telco customers
+* Use drivers to develop a machine learning model to classify churn as a customer ending their contract or not ending (renewing) their contract with Telco
+* This information could be used to further our understanding of which customer elements contribute to or detract from a customer churning.
 
-	Title 1
-	========================
-	Title 2 
-	------------------------
+### Initial Thoughts
 
-# Title 1
-## Title 2
-### Title 3
-#### Title 4
-##### Title 5
-###### Title 6
+My initial hypothesis is that drivers of churn will be elements that have dissatisfied customers. Some service/package or lack of one might be pushing customers to churn.
 
-    # Title 1
-    ## Title 2
-    ### Title 3    
-    #### Title 4
-    ##### Title 5
-    ###### Title 6    
+## The Plan
 
-# Paragraph
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dictum, nibh eu commodo posuere, ligula ante dictum neque, vitae pharetra mauris mi a velit. Phasellus eleifend egestas diam, id tincidunt arcu dictum quis. Pellentesque eu dui tempus, tempus massa sed, eleifend tortor. Donec in sem in erat iaculis tincidunt. Fusce condimentum hendrerit turpis nec vehicula. Aliquam finibus nisi vel eros lobortis dictum. Etiam congue tortor libero, quis faucibus ligula gravida a. Suspendisse non pulvinar nisl. Sed malesuada, felis vitae consequat gravida, dui ligula suscipit ligula, nec elementum nulla sem vel dolor. Vivamus augue elit, venenatis non lorem in, volutpat placerat turpis. Nullam et libero at eros vulputate auctor. Duis sed pharetra lacus. Sed egestas ligula vitae libero aliquet, ac imperdiet est ullamcorper. Sed dapibus sem tempus eros dignissim, ac suscipit lectus dapibus. Proin sagittis diam vel urna volutpat, vel ullamcorper urna lobortis. Suspendisse potenti.
-
-Nulla varius risus sapien, nec fringilla massa facilisis sed. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nunc vel ornare erat, eget rhoncus lectus. Suspendisse interdum scelerisque molestie. Aliquam convallis consectetur lorem ut consectetur. Nullam massa libero, cursus et porta ac, consequat eget nibh. Sed faucibus nisl augue, non viverra justo sagittis venenatis.
-
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dictum, nibh eu commodo posuere, ligula ante dictum neque, vitae pharetra mauris mi a velit. 
-    
-    Phasellus eleifend egestas diam, id tincidunt arcu dictum quis.
-
-# List 
-* Item 1;
-	* Item 1.1;
-* Item 2;
-	* Item 2.1;
-	* Item 2.2;
-* Item 3
-	* Item 3.1;
-		* Item 3.1.1;
-    
->      * Item 1;
->	      * Item 1.1;
->	    * Item 2;
->	     * Item 2.1;
->	     * Item 2.2;
->	    * Item 3
->		   * Item 3.1;
->			  * Item 3.1.1;
-
-## List CheckBox
-
- - [ ] Item A
- - [x] Item B
- - [x] Item C
- 
->     - [ ] Item A
->     - [x] Item B
->     - [x] Item C
+* Acquire data from Codeup MySQL DB
+* Prepare data
+    * Create Engineered columns from existing data
+* Explore data in search of drivers of churn
+    * Answer the following initial questions
+    * Is Churn independent from payment type?
+    * Is Churn independent from internet Service type?
+    * Is Churn independent from paperless billing?
+    * Is there a difference in churn based on monthly charges?
+* Develop a Model to predict if a customer will churn
+    * Use drivers identified in explore to help build predictive models of different types
+    * Evaluate models on train and validate data
+    * Select the best model based on highest accuracy
+    * Evaluate the best model on test data
+* Draw conclusions
 
 
-# Link
-[Google](https://www.google.com) - _Google | Youtube | Gmail | Maps | PlayStore | GoogleDrive_
+# Data Dictionary
 
-[Youtube](https://www.youtube.com) - _Enjoy videos and music you love, upload original content, and share it with friends, family, and the world on YouTube._
+|**Feature**|**Values**|**Definition**|
+|:--------------------:|:---------------------------:|:-------------------------------------------------------- |
+| customer_id           | Alpha-numeric               | Unique ID for each customer                              |
+| gender                | Female/Male                 | Gender of customer                                       |
+| senior_citizen        | True=1/False=0              | Whether customer is a senior citizen or not              |
+| partner               | True=1/False=0              | True=1/False=0, whether customer has a partner or not    |
+| dependents            | True=1/False=0              | True=1/False=0, whether customer has dependents or not   |
+| phone_service         | True=1/False=0              | True=1/False=0, whether customer has phone service or not|
+| multiple_lines        | Yes/No/No phone service     | Whether customer has multiple lines or not               |
+| internet_service_type | None/DSL/Fiber Optic        | Which internet service customer has                      |
+| online_security       | Yes/No/No internet service | Whether customer has online_security                      |
+| online_backup         | Yes/No/No internet service | Whether customer has online_backup                        |
+| device_protection     | Yes/No/No internet service | Whether customer has device_protection                    |
+| tech_support          | Yes/No/No internet service | Whether customer has tech_support                         |
+| streaming_tv          | Yes/No/No internet service | Whether customer has streaming_tv                         |
+| streaming_movies      | Yes/No/No internet service | Whether customer has streaming_movies                     |
+| contract_type         | 3 options                   | Month-to-Month/One-year/Two-year, term of contract       |
+| payment_type          | 4 options (2 auto)          | Customer payment method                                  |
+| paperless_billing     | True=1/False=0              | Whether a customer has paperless billing enabled         |
+| monthly_charges       | Numeric USD                 | Amount customer is charged monthly                       |
+| total_charges         | Numeric USD                 | Total amount customer has been charged                   |
+| tenure                | Numeric                     | Number of months customer has stayed                     |
+| churn (target)        | True=1/False=0              | Whether or not the customer has churned                  |
+| Additional Features   | True=1/False=0              | Encoded values for categorical data                      |
 
-[GitHub](https://github.com/fefong/markdown_readme#getting-started-with-markdown) - _Project_
 
-		[Google](https://www.google.com) - _Google | Youtube | Gmail | Maps | PlayStore | GoogleDrive_
+## Steps to Reproduce
 
-## Anchor links
+1) Clone this repo
+2) If you have access to the Codeup MySQL DB:
+   - Save **env.py** in the repo w/ `user`, `password`, and `host` variables
+   - Run notebook
+3) If you don't have access:
+   - Request access from Codeup
+   - Do step 2
 
-[Markdown - Summary](#Getting-started-with-Markdown)
+# Conclusions
 
-[Markdown - Markdown Editor](#Markdown-Editor)
+### Takeaways and Key Findings
 
-		[Markdown - Link](#Link)
+* Payment type was found to be a driver of churn
+    - Electronic check being the most common among churn
+* Fiber optic internet being a driver of churn was surprising considering it has faster internet speeds
+* Paperless billing was found to be a driver of churn
+    - Having it enabled was the most common among churn
+* Monthly charges was found to be a driver of churn, higher charges for churn
 
-# Blockquote
-> Lebenslangerschicksalsschatz: Lifelong Treasure of Destiny
+### Recommendations
 
-    > Lebenslangerschicksalsschatz: Lifelong Treasure of Destiny 
+* Check with the finance department to figure out if there are issues with electronic check
+* Check with internet department to see if there are frequent issues with Fiber optic internet
 
-# Image | GIF
-![myImage](https://media.giphy.com/media/XRB1uf2F9bGOA/giphy.gif)
-    
-    ![myImage](https://media.giphy.com/media/XRB1uf2F9bGOA/giphy.gif)
-    
-See more [Markdown Extras - Image Align](https://github.com/fefong/markdown_readme/blob/master/markdown-extras.md#image-align)    
+### Next Steps
 
-# Style Text
-### Italic
-
-*Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dictum, nibh eu commodo posuere, ligula ante dictum neque, vitae pharetra mauris mi a velit.*
-
-     *Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dictum, nibh eu commodo posuere, ligula ante dictum neque, vitae pharetra mauris mi a velit.*
-
-### Bold
-**Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dictum, nibh eu commodo posuere, ligula ante dictum neque, vitae pharetra mauris mi a velit.**
-
-    **Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dictum, nibh eu commodo posuere, ligula ante dictum neque, vitae pharetra mauris mi a velit.**
-    
-### Strikethrough
-~~strikethrough text~~
-
-    ~~strikethrough text~~
-    
-# Code
-
-```java
-public static void main(String[] args) {
-	//TODO
-}
-```
-
->   \`\`\`java <br>
->   public static void main(String[] args) {<br>
->	    //TODO<br>
->	}<br>
->   \`\`\`<br>
-
-See more [Markdown Extras - Style Text](https://github.com/fefong/markdown_readme/blob/master/markdown-extras.md#style-text)
-
-# Email
-<email@email.com>
-
-    <email@email.com>
-
-# Table
-
-|Column 1|Column 2|Column 3|
-|---|---|---|
-|Row 1 Column1| Row 1 Column 2| Row 1 Column 3|
-|Row 2 Column1| Row 2 Column 2| Row 2 Column 3|
-
->\|Column 1|Column 2|Column 3|<br>
->\|---|---|---|<br>
->\|Row 1 Column1| Row 1 Column 2| Row 1 Column 3|<br>
->\|Row 2 Column1| Row 2 Column 2| Row 2 Column 3|<br>
-
-## Table Align
-
-## Align Center
-
-|Column 1|Column 2|Column 3|
-|:---:|:---:|:---:|
-|Row 1 Column1| Row 1 Column 2| Row 1 Column 3|
-|Row 2 Column1| Row 2 Column 2| Row 2 Column 3|
-
->\|Column 1|Column 2|Column 3|<br>
->\|:---:|:---:|:---:|<br>
->\|Row 1 Column1| Row 1 Column 2| Row 1 Column 3|<br>
->\|Row 2 Column1| Row 2 Column 2| Row 2 Column 3|<br>
-
-## Align Left
-
-|Column 1|Column 2|Column 3|
-|:---|:---|:---|
-|Row 1 Column1| Row 1 Column 2| Row 1 Column 3|
-|Row 2 Column1| Row 2 Column 2| Row 2 Column 3|
-
->\|Column 1|Column 2|Column 3|<br>
->\|:---|:---|:---|<br>
->\|Row 1 Column1| Row 1 Column 2| Row 1 Column 3|<br>
->\|Row 2 Column1| Row 2 Column 2| Row 2 Column 3|<br>
-
-## Align Right
-
-|Column 1|Column 2|Column 3|
-|---:|---:|---:|
-|Row 1 Column1| Row 1 Column 2| Row 1 Column 3|
-|Row 2 Column1| Row 2 Column 2| Row 2 Column 3|
-
->\|Column 1|Column 2|Column 3|<br>
->\|---:|---:|---:|<br>
->\|Row 1 Column1| Row 1 Column 2| Row 1 Column 3|<br>
->\|Row 2 Column1| Row 2 Column 2| Row 2 Column 3|<br>
-
-See more [Markdown Extras - Table](https://github.com/fefong/markdown_readme/blob/master/markdown-extras.md#table)
-* [Rownspan](https://github.com/fefong/markdown_readme/blob/master/markdown-extras.md#table---rowspan)
-* [Colspan](https://github.com/fefong/markdown_readme/blob/master/markdown-extras.md#table---colspan)
-
-# Escape Characters
-
-```
-\   backslash
-`   backtick
-*   asterisk
-_   underscore
-{}  curly braces
-[]  square brackets
-()  parentheses
-#   hash mark
-+   plus sign
--   minus sign (hyphen)
-.   dot
-!   exclamation mark
-```
-
-# Emoji
-
-* [Emoji](emoji.md#emoji);
-	* [People](emoji.md#people) - (:blush: ; :hushed: ; :shit:);
-	* [Nature](emoji.md#nature) - (:sunny: ; :snowman: ; :dog:);
-	* [Objects](emoji.md#objects) - (:file_folder: ; :computer: ; :bell:);
-	* [Places](emoji.md#places) - (:rainbow: ; :warning: ; :statue_of_liberty:);
-	* [Symbols](emoji.md#symbols) - (:cancer: ; :x: ; :shipit:);
-* [Kaomoji](emoji.md#kaomoji);
-* [Special-Symbols](emoji.md#special-symbols);
-	
-
-# Shields Badges
-
-:warning: _We are not responsible for this site_
-
-See more: [https://shields.io/](https://shields.io/)
-
-[![GitHub forks](https://img.shields.io/github/forks/fefong/markdown_readme)](https://github.com/fefong/markdown_readme/network)
-![Markdown](https://img.shields.io/badge/markdown-project-red)
-
-# Markdown Editor
-
-[StackEdit](https://stackedit.io) - _StackEdit’s Markdown syntax highlighting is unique. The refined text formatting of the editor helps you visualize the final rendering of your files._
-
-# Some links for more in depth learning
-
-:page_facing_up: [Markdown Extras](https://github.com/fefong/markdown_readme/blob/master/markdown-extras.md#markdown---extras)
-
-:page_facing_up: [Wikipedia - Markdown](https://pt.wikipedia.org/wiki/Markdown)
-
-:page_facing_up: [Oficial](https://daringfireball.net/projects/markdown/)
-
+* Given more time I could check what is causing the high monthly charges that lead to customers churning
