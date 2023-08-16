@@ -9,10 +9,10 @@ Telco Project
 	- [List](#list)
 - [Link](#link)
 	- [Anchor links](#anchor-links)
-- [Data Dictionary](#data-dictionary))
-- [Steps to Reproduce](#steps-to-reporduce)
+- [Data Dictionary](#data-dictionary)
+- [Steps to Reproduce](#steps-to-reporduce) 
 - [Conclusions](#conclusions)
-	- [Takeaway and Key Findings](#takeaway-and-key-findings)
+	- [Takeaway and Key Findings](#takeaways-and-key-findings)
 - [Reccomendations](#recommendations)
 - [Next Steps](#next-steps)
 
