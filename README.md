@@ -6,16 +6,12 @@ Telco Project
 - [Project Goal](#project-goal)
 - [Initial Thoughts](#Initial-Thoughts)
 - [Plan](#Plan)
-	- [List](#list)
-- [Link](#link)
-	- [Anchor links](#anchor-links)
 - [Data Dictionary](#data-dictionary)
 - [Steps to Reproduce](#steps-to-reporduce) 
 - [Conclusions](#conclusions)
 	- [Takeaway and Key Findings](#takeaways-and-key-findings)
-- [Reccomendations](#recommendations)
-- [Next Steps](#next-steps)
-
+	- [Reccomendations](#recommendations)
+	- [Next Steps](#next-steps)
 
 ----------------------------------
 
@@ -23,7 +19,7 @@ Telco Project
 
 Telco is a telecommunications company that offers many services to a wide range of customers. I have decided to look into the different elements of a customer churning to determine if any of them increase or decrease the chance of a customer to churn.
 
-### Project Goal
+## Project Goal
 
 * Discover drivers of churn of Telco customers
 * Use drivers to develop a machine learning model to classify churn as a customer ending their contract or not ending (renewing) their contract with Telco
@@ -33,7 +29,7 @@ Telco is a telecommunications company that offers many services to a wide range 
 
 My initial hypothesis is that drivers of churn will be elements that have dissatisfied customers. Some service/package or lack of one might be pushing customers to churn.
 
-## The Plan
+### The Plan
 
 * Acquire data from Codeup MySQL DB
 * Prepare data
@@ -56,9 +52,9 @@ My initial hypothesis is that drivers of churn will be elements that have dissat
 
 |**Feature**|**Values**|**Definition**|
 |:--------------------:|:---------------------------:|:-------------------------------------------------------- |
-| customer_id           | Alpha-numeric               | Unique ID for each customer                              |
-| gender                | Female/Male                 | Gender of customer                                       |
-| senior_citizen        | True=1/False=0              | Whether customer is a senior citizen or not              |
+| *customer_id*           | Alpha-numeric               | Unique ID for each customer                              |
+| *gender*               | Female/Male                 | Gender of customer                                       |
+| _senior_citizen_        | True=1/False=0              | Whether customer is a senior citizen or not              |
 | partner               | True=1/False=0              | True=1/False=0, whether customer has a partner or not    |
 | dependents            | True=1/False=0              | True=1/False=0, whether customer has dependents or not   |
 | phone_service         | True=1/False=0              | True=1/False=0, whether customer has phone service or not|
@@ -90,22 +86,24 @@ My initial hypothesis is that drivers of churn will be elements that have dissat
    - Request access from Codeup
    - Do step 2
 
-# Conclusions
+## Conclusions
 
 ### Takeaways and Key Findings
-
+<!-- EX:
 * Payment type was found to be a driver of churn
     - Electronic check being the most common among churn
 * Fiber optic internet being a driver of churn was surprising considering it has faster internet speeds
 * Paperless billing was found to be a driver of churn
     - Having it enabled was the most common among churn
-* Monthly charges was found to be a driver of churn, higher charges for churn
+* Monthly charges was found to be a driver of churn, higher charges for churn-->
 
 ### Recommendations
 
+<!-- EX:
 * Check with the finance department to figure out if there are issues with electronic check
-* Check with internet department to see if there are frequent issues with Fiber optic internet
+* Check with internet department to see if there are frequent issues with Fiber optic internet-->
 
 ### Next Steps
 
-* Given more time I could check what is causing the high monthly charges that lead to customers churning
+<!-- EX:
+* Given more time I could check what is causing the high monthly charges that lead to customers churning-->
