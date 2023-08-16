@@ -4,10 +4,10 @@ Telco Project
 
 - [Project Description](#project-description)
 - [Project Goal](#project-goal)
-- [Initial Thoughts](#Initial-Thoughts)
-- [Plan](#Plan)
+- [Initial Thoughts](#initial-thoughts)
+- [Plan](#the-plan)
 - [Data Dictionary](#data-dictionary)
-- [Steps to Reproduce](#steps-to-reporduce) 
+- [Steps to Reproduce](#steps-to-reproduce) 
 - [Conclusions](#conclusions)
 	- [Takeaway and Key Findings](#takeaways-and-key-findings)
 	- [Reccomendations](#recommendations)
@@ -15,7 +15,8 @@ Telco Project
 
 ----------------------------------
 
-# Project-Description : Analyzing Customer Churn Factors for Predictive Insights
+# Project Description
+* Analyzing Customer Churn Factors for Predictive Insights
 
 **The Telco Telecommunication company provides phone, internet, streaming and other add-on services to their customers. This project will involve analysis of the various elements of customer churns to determine if they increase or decrease the probability of customer churn  **
 
