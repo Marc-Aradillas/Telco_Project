@@ -12,7 +12,7 @@ Telco Project
 - [Data Dictionary](#data-dictionary))
 - [Steps to Reproduce](#steps-to-reporduce)
 - [Conclusions](#conclusions)
-	- Takeaway and Key Findings_(#takeaway-and-key-findings)
+	- [Takeaway and Key Findings](#takeaway-and-key-findings)
 - [Reccomendations](#recommendations)
 - [Next Steps](#next-steps)
 
