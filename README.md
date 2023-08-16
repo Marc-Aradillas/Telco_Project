@@ -53,27 +53,27 @@ My initial hypothesis is that drivers of churn will be elements that have dissat
 |**Feature**|**Values**|**Definition**|
 |:--------------------:|:---------------------------:|:-------------------------------------------------------- |
 | *customer_id*           | Alpha-numeric               | Unique ID for each customer                              |
-| *gender*               | Female/Male                 | Gender of customer                                       |
-| _senior_citizen_        | True=1/False=0              | Whether customer is a senior citizen or not              |
-| partner               | True=1/False=0              | True=1/False=0, whether customer has a partner or not    |
-| dependents            | True=1/False=0              | True=1/False=0, whether customer has dependents or not   |
-| phone_service         | True=1/False=0              | True=1/False=0, whether customer has phone service or not|
-| multiple_lines        | Yes/No/No phone service     | Whether customer has multiple lines or not               |
-| internet_service_type | None/DSL/Fiber Optic        | Which internet service customer has                      |
-| online_security       | Yes/No/No internet service | Whether customer has online_security                      |
-| online_backup         | Yes/No/No internet service | Whether customer has online_backup                        |
-| device_protection     | Yes/No/No internet service | Whether customer has device_protection                    |
-| tech_support          | Yes/No/No internet service | Whether customer has tech_support                         |
-| streaming_tv          | Yes/No/No internet service | Whether customer has streaming_tv                         |
-| streaming_movies      | Yes/No/No internet service | Whether customer has streaming_movies                     |
-| contract_type         | 3 options                   | Month-to-Month/One-year/Two-year, term of contract       |
-| payment_type          | 4 options (2 auto)          | Customer payment method                                  |
-| paperless_billing     | True=1/False=0              | Whether a customer has paperless billing enabled         |
-| monthly_charges       | Numeric USD                 | Amount customer is charged monthly                       |
-| total_charges         | Numeric USD                 | Total amount customer has been charged                   |
-| tenure                | Numeric                     | Number of months customer has stayed                     |
-| churn (target)        | True=1/False=0              | Whether or not the customer has churned                  |
-| Additional Features   | True=1/False=0              | Encoded values for categorical data                      |
+| *gender*                | Female/Male                 | Gender of customer                                       |
+| *senior_citizen*        | True=1/False=0              | Whether customer is a senior citizen or not              |
+| *partner*               | True=1/False=0              | True=1/False=0, whether customer has a partner or not    |
+| *dependents*            | True=1/False=0              | True=1/False=0, whether customer has dependents or not   |
+| *phone_service*         | True=1/False=0              | True=1/False=0, whether customer has phone service or not|
+| *multiple_lines*        | Yes/No/No phone service     | Whether customer has multiple lines or not               |
+| *internet_service_type* | None/DSL/Fiber Optic        | Which internet service customer has                      |
+| *online_security*       | Yes/No/No internet service  | Whether customer has online_security                     |
+| *online_backup*         | Yes/No/No internet service  | Whether customer has online_backup                       |
+| *device_protection*     | Yes/No/No internet service  | Whether customer has device_protection                   |
+| *tech_support*          | Yes/No/No internet service  | Whether customer has tech_support                        |
+| *streaming_tv*          | Yes/No/No internet service  | Whether customer has streaming_tv                        |
+| *streaming_movies*      | Yes/No/No internet service  | Whether customer has streaming_movies                    |
+| *contract_type*         | 3 options                   | Month-to-Month/One-year/Two-year, term of contract       |
+| *payment_type*          | 4 options (2 auto)          | Customer payment method                                  |
+| *paperless_billing*     | True=1/False=0              | Whether a customer has paperless billing enabled         |
+| *monthly_charges*       | Numeric USD                 | Amount customer is charged monthly                       |
+| *total_charges*         | Numeric USD                 | Total amount customer has been charged                   |
+| *tenure*                | Numeric                     | Number of months customer has stayed                     |
+| *churn* (target)        | True=1/False=0              | Whether or not the customer has churned                  |
+| *Additional Features*   | True=1/False=0              | Encoded values for categorical data                      |
 
 
 ## Steps to Reproduce
