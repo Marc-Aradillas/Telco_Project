@@ -15,40 +15,52 @@ Telco Project
 
 ----------------------------------
 
-# Project-Description
+# Project-Description : Analyzing Customer Churn Factors for Predictive Insights
 
-Telco is a telecommunications company that offers many services to a wide range of customers. I have decided to look into the different elements of a customer churning to determine if any of them increase or decrease the chance of a customer to churn.
+**The Telco Telecommunication company provides phone, internet, streaming and other add-on services to their customers. This project will involve analysis of the various elements of customer churns to determine if they increase or decrease the probability of customer churn  **
 
 ## Project Goal
 
-* Discover drivers of churn of Telco customers
-* Use drivers to develop a machine learning model to classify churn as a customer ending their contract or not ending (renewing) their contract with Telco
-* This information could be used to further our understanding of which customer elements contribute to or detract from a customer churning.
+* Identify drivers for churn of Telco customers
+* Utilze drivers to develop a Machine Learning model to classify churn as a customer ending their contract or not ending their contract with Telco.
+* The details of could provide further insight on which customer elements contribute to or detract from a customer churning.
 
 ### Initial Thoughts
 
-My initial hypothesis is that drivers of churn will be elements that have dissatisfied customers. Some service/package or lack of one might be pushing customers to churn.
+My initial hypothesis is that the drive of churn may be impacted by customers not opting for online security as part of their contract services.
 
 ### The Plan
 
-* Acquire data from Codeup MySQL DB
-* Prepare data
-    * Create Engineered columns from existing data
-* Explore data in search of drivers of churn
-    * Answer the following initial questions
-    * Is Churn independent from payment type?
-    * Is Churn independent from internet Service type?
-    * Is Churn independent from paperless billing?
-    * Is there a difference in churn based on monthly charges?
-* Develop a Model to predict if a customer will churn
+* **Acquire data from Codeup MySQL Database**
+  
+* **Prepare data**
+    * Feature Engineer columns from existing data
+        * online_security
+        * online_backup
+        * device_protection
+        * tech_support
+        * streaming_tv
+        * streaming_movies
+        * tech_support
+      
+* **Explore data in search of impactful drivers of churn**
+    * Answer the following initial questions,
+        * Is Churn independent from online Security?
+        * Is Churn independent from internet service types?
+        * Is there a difference in churn based on monthly charges? Total charges?
+        * Does having more than one add-on affect churn?
+        * Does the contract type affect churn?
+          
+* **Develop a Model to predict if a customer will churn**
     * Use drivers identified in explore to help build predictive models of different types
     * Evaluate models on train and validate data
     * Select the best model based on highest accuracy
-    * Evaluate the best model on test data
-* Draw conclusions
+    * Evaluate the best performing model on test data
+      
+* **Draw conclusions**
 
 
-# Data Dictionary
+## Data Dictionary
 
 |**Feature**|**Values**|**Definition**|
 |:--------------------:|:---------------------------:|:-------------------------------------------------------- |
@@ -78,13 +90,13 @@ My initial hypothesis is that drivers of churn will be elements that have dissat
 
 ## Steps to Reproduce
 
-1) Clone this repo
-2) If you have access to the Codeup MySQL DB:
-   - Save **env.py** in the repo w/ `user`, `password`, and `host` variables
-   - Run notebook
-3) If you don't have access:
-   - Request access from Codeup
-   - Do step 2
+1) Clone this repo following the code link at the top
+2) If you have granted access to the Codeup MySQL DB:
+   - Save **env.py** in the repo with `user`, `password`, and `host` variables and add to .gitignore file
+   - Run jupyter notebook or VS Code file
+3) If you don't have granted access:
+   - Request access from Codeup staff
+   - Return to step 2
 
 ## Conclusions
 
