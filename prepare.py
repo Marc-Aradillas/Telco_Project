@@ -11,9 +11,6 @@ from acquire import get_telco_data
 
 
 
-
-
-
 #------------PREP TELCO DATA FUNCTION-------------------
 
 def prep_telco(df):
@@ -37,6 +34,8 @@ def prep_telco(df):
     
     return df.drop(columns = ['customer_id', 'payment_type_id', 'contract_type_id', 'internet_service_type_id'])
 
+
+    
 #--------------DROP COLUMNS FUNCTION------------------------
 
 def drop_cols(df):
@@ -68,6 +67,8 @@ def drop_cols(df):
 #     '''
 #     return train, val, test
 
+
+    
 # #-----------GET DUMMIES FUNCTION----------------------------
 
 # def dummies(df):
@@ -80,6 +81,8 @@ def drop_cols(df):
     
 #     return df
 
+
+    
 #-----------DATA SPLIT FUNCTION------------------------------
 
 
@@ -95,6 +98,7 @@ def train_val_test(df, strat, seed = 42):
     return train, val, test
     
 
+    
 #------------CLEAN TELCO DATA FUNCTION---------------------------------
 
 # Defined function to implement cleaning of data
