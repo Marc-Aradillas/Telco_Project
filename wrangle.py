@@ -1,7 +1,7 @@
 # create a .py file with my acquire and prepare module and define a function to wrangle data calling functions from modules.
 from prepare import clean_telco_data
 
-def wrangle_data():
+def wrangle():
     """
     This function wrangles the data by acquiring and preparing it.
 
