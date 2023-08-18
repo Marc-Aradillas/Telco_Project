@@ -5,12 +5,17 @@ import pandas as pd
 
 from env import get_connect
 
+#-----------DATABASE CONNECTION FUNCTION------------------------------
+
 def get_db_connect(database):
     '''
     wrapper function to make it easier to connect to a database.
     '''
     return get_connect(database)
-    
+
+
+#-----------SQL DATA FUNCTION------------------------------
+
 def new_telco_data():
     
     '''
@@ -31,6 +36,8 @@ def new_telco_data():
     print('\nTelco dataframe generated.')
     
     return df
+
+#-----------FILE FINDER FUNCTION------------------------------
 
 def get_telco_data():
 

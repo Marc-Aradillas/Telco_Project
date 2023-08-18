@@ -1,8 +1,4 @@
 # create a .py file with my acquire and prepare module and define a function to wrangle data calling functions from modules.
-import numpy as np
-import pandas as pd
-
-from acquire import get_telco_data
 from prepare import clean_telco_data
 
 def wrangle_data():
@@ -15,4 +11,4 @@ def wrangle_data():
 
     df = clean_telco_data()
     
-    return train, val, test
+    return df
