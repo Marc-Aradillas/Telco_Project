@@ -3,6 +3,7 @@ import seaborn as sns
 import pandas as pd
 from scipy import stats
 
+from sklearn.impute import SimpleImputer
 from wrangle import
 
 

@@ -43,53 +43,19 @@ def drop_cols(df):
     Defined function to drop columns in working dataframe.
     '''
     return df.drop(columns = [])
-    
-
-# #--------------IMPUTATION FUNCTION-----------------------
-
-# def impute_vals(train, val, test):
-#     '''
-#     Defined function to impute values for our train, val, and test subsets of my splitted data.
-#     '''
-#     # example:
-#     '''
-#     town_mode = train.embark_town.mode()
-    
-#     train.embark_town = train.embark_town.fillna(town_mode)
-#     val.embark_town = val.embark_town.fillna(town_mode)
-#     test.embark_town = test.embark_town.fillna(town_mode)
-    
-#     med_age = train.age.median()
-    
-#     train.age = train.age.fillna(med_age)
-#     val.age = val.age.fillna(med_age)
-#     test.age = test.age.fillna(med_age)
-#     '''
-#     return train, val, test
-
-
-    
-# #-----------GET DUMMIES FUNCTION----------------------------
-
-# def dummies(df):
-#     '''
-#     # defined function to one-hot-encode categorical values in a column from the dataframe
-#     '''
-#     df = pd.get_dummies(df, columns = [''], drop_first = True)
-    
-#     df = pd.get_dummies(df)
-    
-#     return df
-
 
     
 #-----------DATA SPLIT FUNCTION------------------------------
 
 
-# 20% test, 80% train_validate
-# then of the 80% train_validate: 30% validate, 70% train.
+# 20% test, 80% train validate
+# then of the 80% train validate: 30% validate, 70% train.
 
 def train_val_test(df, strat, seed = 42):
+    '''
+    This function splits the data into different percentages to be used for exploratory data analysis
+    and modeling.
+    '''
     
     train, test = train_test_split(df, test_size = 0.2, random_state=seed, stratify=df[strat])
     
@@ -103,6 +69,10 @@ def train_val_test(df, strat, seed = 42):
 
 # Defined function to implement cleaning of data
 def clean_telco_data():
+    '''
+    A function to be called in wrangle.py to have data retrieved and cleaned
+    to display a ready-to-use dataframe.
+    '''
     
     df = get_telco_data()
 
@@ -111,13 +81,5 @@ def clean_telco_data():
     df = drop_cols(df)
     
     train, val, test = train_val_test(df, 'churn')
-    
-    # train, val, test = impute_vals(train, val, test)
-    
-    # train = dummies(train)
-    
-    # val = dummies(val)
-    
-    # test = dummies(test)
-    
+  
     return train, val, test
