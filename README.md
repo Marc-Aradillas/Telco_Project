@@ -18,7 +18,7 @@ Telco Project
 # Project Description
 * Analyzing Customer Churn Factors for Predictive Insights
 
-**The Telco Telecommunication company provides phone, internet, streaming and other add-on services to their customers. This project will involve analysis of the various elements of customer churns to determine if they increase or decrease the probability of customer churn  **
+*The Telco Telecommunication company provides phone, internet, streaming and other add-on services to their customers. This project will involve analysis of the various elements of customer churns to determine if they increase or decrease the probability of customer churn*
 
 ## Project Goal
 
@@ -102,21 +102,16 @@ My initial hypothesis is that the drive of churn may be impacted by customers no
 ## Conclusions
 
 ### Takeaways and Key Findings
-<!-- EX:
-* Payment type was found to be a driver of churn
-    - Electronic check being the most common among churn
-* Fiber optic internet being a driver of churn was surprising considering it has faster internet speeds
-* Paperless billing was found to be a driver of churn
-    - Having it enabled was the most common among churn
-* Monthly charges was found to be a driver of churn, higher charges for churn-->
-
+* Phone service was found to be a driver of churn.
+* Internet service was not a driver of churn.
+* Monthly charges was found to be a driver of churn, higher charges for churn.
+  
 ### Recommendations
 
-<!-- EX:
-* Check with the finance department to figure out if there are issues with electronic check
-* Check with internet department to see if there are frequent issues with Fiber optic internet-->
+
+* Check with the finance department to figure out if there are issues with the phone service option.
+* Check to see if multiple phone lines have a impact on churn.
 
 ### Next Steps
 
-<!-- EX:
-* Given more time I could check what is causing the high monthly charges that lead to customers churning-->
+* Given more time I could check what is causing the phone service leading to high churn.
