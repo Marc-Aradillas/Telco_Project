@@ -18,7 +18,7 @@ Telco Project
 # Project Description
 * Analyzing Customer Churn Factors for Predictive Insights
 
-**The Telco Telecommunication company provides phone, internet, streaming and other add-on services to their customers. This project will involve analysis of the various elements of customer churns to determine if they increase or decrease the probability of customer churn  **
+*The Telco Telecommunication company provides phone, internet, streaming and other add-on services to their customers. This project will involve analysis of the various elements of customer churns to determine if they increase or decrease the probability of customer churn*
 
 ## Project Goal
 
