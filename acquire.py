@@ -33,7 +33,7 @@ def new_telco_data():
         '''
     
     df = pd.read_sql(query, get_connect('telco_churn'))
-    print('\nTelco dataframe generated.')
+    #print('\nTelco dataframe generated.')
     
     return df
 
@@ -47,12 +47,12 @@ def get_telco_data():
     actions for this function
     '''
     if os.path.isfile('telco.csv'):
-        print('Found file')
+        #print('Found file')
         # If csv file exists read in data from csv file.
         df = pd.read_csv('telco.csv', index_col=0)
         
     else:
-        print('Retrieving file...\n')
+        #print('Retrieving file...\n')
         # Read fresh data from db into a dataframe
         df = new_telco_data()
         # Cache data

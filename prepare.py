@@ -19,7 +19,7 @@ def prep_telco(df):
     total_charges column in the data set. I dropped files that were unneccessary for
     EDA which follows in the next step in the DS Pipeline.
     '''
-    return df.drop(columns = ['customer_id', 'payment_type_id', 'contract_type_id', 'internet_service_type_id'])
+    return df.drop(columns = ['payment_type_id', 'contract_type_id', 'internet_service_type_id'])
     
     
 #-----------DATA SPLIT FUNCTION------------------------------
@@ -87,7 +87,8 @@ def impute_vals(train, val, test):
     
 #-----------GET DUMMIES FUNCTION----------------------------
 
-def dummies(df, columns_to_exclude=['churn', 'senior_citizen', 'tenure', 'monthly_charges', 'total_charges'], drop_first_columns=['gender', 'senior_citizen', 'partner', 'dependents', 'phone_service', 'multiple_lines', 'online_security', 'online_backup', 'device_protection', 'tech_support', 'streaming_tv', 'streaming_movies', 'paperless_billing']):
+def dummies(df, columns_to_exclude=['customer_id', 'senior_citizen', 'tenure', 'monthly_charges', 'total_charges'], drop_first_columns=['gender', 'churn',
+'senior_citizen', 'partner', 'dependents', 'phone_service', 'multiple_lines', 'online_security', 'online_backup', 'device_protection', 'tech_support', 'streaming_tv', 'streaming_movies', 'paperless_billing']):
     
     # Get dummies for all categorical columns except those in columns_to_exclude
     categorical_columns = [col for col in df.columns if col not in columns_to_exclude]
@@ -128,7 +129,8 @@ def rename(df):
         'payment_type_Bank transfer (automatic)': 'bank_transfer_payment',
         'payment_type_Credit card (automatic)': 'credit_card_payment',
         'payment_type_Electronic check' : 'electronic_payment',
-        'payment_type_Mailed check' : 'mailed_payment'
+        'payment_type_Mailed check' : 'mailed_payment',
+        'churn_Yes' : 'churn'
         }
     
     df.rename(columns=new_column_names, inplace=True)

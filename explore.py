@@ -4,14 +4,16 @@ import pandas as pd
 from scipy import stats
 from math import sqrt
 
-# custom imports
-from wrangle import wrangle as w
-
+from acquire import get_telco_data
 
 ############################### Chi-squared test & Evaluation Funtions #######################################
-def chi2_and_visualize(df, cat_var, target, a=0.05):
-    observed = pd.crosstab(df[cat_var], df[target])
+
+
+def chi2_and_visualize(train, cat_var, target, a=0.05):
+    observed = pd.crosstab(train[cat_var], train[target])
     chi2, p, degf, e = stats.chi2_contingency(observed)
+
+    print('-------------------------')
     
     print(f'Chi2 Statistic: {chi2}\n')
     print(f'P-Value: {p}\n')
@@ -20,9 +22,11 @@ def chi2_and_visualize(df, cat_var, target, a=0.05):
 
     # Plotting the countplot
     title = f'{cat_var.capitalize()} Churned vs. Not Churned'
-    plot_cp(df, target, cat_var, title)
+    plot_cp(train, target, cat_var, title)
     
     eval_p(p)
+
+    print('-------------------------')
 
 def plot_cp(data, x_col, hue_col, title):
     plt.figure(figsize=(10, 6))
@@ -32,7 +36,7 @@ def plot_cp(data, x_col, hue_col, title):
 
 def eval_p(p, a=0.05):
     if p < a:
-        print(f'\nThe result is significant, we reject the null hypothesis with a p-value of {round(p, 2)}.')
+        print(f'\nWe reject the null hypothesis with a p-value of {round(p, 2)}.')
     else:
         print(f'\nWe failed to reject the null hypothesis with a p-value of {round(p, 2)}.')
 
@@ -64,21 +68,27 @@ def spearman_r_analysis(data, x_col, y_col, alpha=0.05):
 
     print(f'Spearman\'s r: {spearman_r:.2f}\n')
     print(f'This suggests a moderate positive correlation between variables. As monthly charges increase, tenure tends to increase.')
-    print(f'This does not mean there is a strong relationship. They are moderately associated\n')
+    print(f'This does not mean there is a strong relationship. They are moderately associated.\n')
     
     # Plot a scatter plot
     plt.figure(figsize=(10, 6))
-    sns.scatterplot(data=data, x=x_col, y=y_col, hue='churn')
+    ax = sns.scatterplot(data=data, x=x_col, y=y_col, hue='churn')
+    
+    # Add mean lines
+    ax.axhline(data[y_col].mean(), color='red', linestyle='dashed', label='Mean ' + y_col)
+    ax.axvline(data[x_col].mean(), color='blue', linestyle='dashed', label='Mean ' + x_col)
+    
     plt.title(f'Spearman\'s r Analysis: {x_col} vs. {y_col}')
     plt.xlabel(x_col)
     plt.ylabel(y_col)
+    plt.legend()
     plt.show()
     
-    
     if p_value < alpha:
-        print(f'\nWe Reject the null hypothesis. There is a monotonic correlation (p-value: {p_value:.2f})')
+        print(f'\nWe Reject the null hypothesis. There is a linear correlation (p-value: {p_value:.2f})')
     else:
-        print(f'\nWe fail to reject the null hypothesis that there is a monotonic correlation (p-value: {p_value:.2f})')
+        print(f'\nWe fail to reject the null hypothesis that there is a linear correlation (p-value: {p_value:.2f})')
+
 
 
 ################### parametric tests and visualize ##########################################
@@ -121,4 +131,32 @@ def two_sample_t_test(data1, data2, alpha=0.05):
     plt.ylabel('Frequency')
     
     plt.tight_layout()
+    plt.show()
+
+################### baseline acc ##########################################
+
+def baseline(target):
+    """
+    The function calculates and prints the accuracy of a baseline model that always predicts the most
+    frequent class in the target variable.
+    
+    :param target: The "target" parameter is likely a Pandas Series or DataFrame column that contains
+    the true labels or values that we are trying to predict or classify. The "baseline" function appears
+    to calculate the accuracy of a simple baseline model that always predicts the most common value in
+    the "target" column
+    """
+    print(f'Baseline: {round(((target==target.value_counts().idxmax()).mean())*100,2)}% Accuracy')
+
+
+
+    
+############################ Target var Dist Function ################################
+def plot_tvd(data):
+    data = get_telco_data()
+    sns.set(style="whitegrid")
+    plt.figure(figsize=(8, 6))
+    sns.countplot(data=data, x='churn')
+    plt.title('Distribution of Churn in Telco Churn Dataset')
+    plt.xlabel('Churn')
+    plt.ylabel('Count')
     plt.show()
